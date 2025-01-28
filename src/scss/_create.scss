@@ -1,0 +1,122 @@
+// .create-note-container {
+//   width: 80%;
+//   max-width: 600px;
+//   margin: 50px auto;
+//   padding: 20px;
+//   border-radius: 8px;
+//   background-color: #f9f9f9;
+//   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+//     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+//     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+// }
+// .create-note-container h2 {
+//   text-align: center;
+//   font-size: 2rem;
+//   margin-bottom: 20px;
+// }
+
+// .create-note-form {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .form-group {
+//   margin-bottom: 15px;
+// }
+
+// label {
+//   font-size: 1rem;
+//   margin-bottom: 5px;
+//   color: #333;
+// }
+
+// input,
+// select,
+// textarea {
+//   width: 100%;
+//   padding: 10px;
+//   font-size: 1rem;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+// }
+
+// textarea {
+//   height: 150px;
+// }
+
+// .create-note-container button {
+//   padding: 10px;
+//   font-size: 1rem;
+//   color: #fff;
+//   background-color: #4caf50;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+// }
+
+// .create-note-container button:hover {
+//   background-color: #45a049;
+// }
+
+.create-note-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.create-note-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+
+  .ant-card-head {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 16px 24px;
+  }
+}
+
+.create-note-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .back-button {
+    color: #666;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #1890ff;
+    }
+  }
+
+  .page-title {
+    margin: 0;
+  }
+}
+
+.create-note-form {
+  padding: 1rem 0;
+
+  .styled-input {
+    border-radius: 6px;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: #40a9ff;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    .submit-button {
+      min-width: 120px;
+    }
+  }
+}
