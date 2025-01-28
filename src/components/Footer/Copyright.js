@@ -49,12 +49,10 @@ const Copyright = () => {
           <h4 className="footer-subtitle">Quick Links</h4>
           <ul className="footer-links">
             <li>
-              <Link>
-                <a href="/create">Create Note</a>
-              </Link>
+              <Link to="/create">Create Note</Link>
             </li>
             <li>
-              <Link to="/notes">Profile</Link>
+              <Link to="/">Profile</Link>
             </li>
           </ul>
         </div>
