@@ -27,6 +27,7 @@ import {
   LinkedinOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const { Footer } = Layout;
 
@@ -48,10 +49,12 @@ const Copyright = () => {
           <h4 className="footer-subtitle">Quick Links</h4>
           <ul className="footer-links">
             <li>
-              <a href="/create">Create Note</a>
+              <Link>
+                <a href="/create">Create Note</a>
+              </Link>
             </li>
             <li>
-              <a href="/profile">Profile</a>
+              <Link to="/notes">Profile</Link>
             </li>
           </ul>
         </div>
