@@ -5,17 +5,10 @@ import Routes from "./pages/Routes";
 import { useAuthContext } from "./Contexts/auth";
 import Screenloader from "./components/screenloader";
 
-// import { ConfigProvider } from 'antd';
-
 function App() {
   const { isAppLoading } = useAuthContext();
 
-  return (
-    //  <ConfigProvider theme={{ token: { colorPrimary: '#4096FF' } }}>
-    <>{isAppLoading ? <Screenloader /> : <Routes />}</>
-
-    /* </ConfigProvider> */
-  );
+  return <>{isAppLoading ? <Screenloader /> : <Routes />}</>;
 }
 
 export default App;

@@ -1,21 +1,14 @@
 import { Row, Col, Button, Input, Form, message } from "antd";
 import React from "react";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-import { AuthContext, useAuthContext } from "../../Contexts/auth";
-import {
-  sendPasswordResetEmail,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { Navigate } from "react-router-dom";
+import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../Config/firebase";
 
 const ForgotPassword = () => {
-  const [isProcessing, setIsProcessing] = useState(false);
-
   const [state, setState] = useState({
     email: "",
   });
-  const navigate = useNavigate();
 
   const handleChange =
     // e =>  setState({...state, [e.target.name]: e.target.value})
@@ -34,10 +27,6 @@ const ForgotPassword = () => {
 
     email = email.trim();
 
-    const User = { email };
-
-    setIsProcessing(true);
-
     sendPasswordResetEmail(auth, email)
       .then(() => {
         // Signed in
@@ -49,7 +38,6 @@ const ForgotPassword = () => {
       .catch((error) => {
         window.notify("Soemthing went wring! Please try again ", "error");
         console.error(error);
-        setIsProcessing(false);
         // ..
       });
   };
@@ -78,7 +66,6 @@ const ForgotPassword = () => {
                   block
                   htmlType="submit"
                   onClick={handleSumbit}
-                  
                 >
                   Send Email
                 </Button>

@@ -43,7 +43,7 @@ const AuthProvider = ({ children }) => {
         setisAppLoading(false);
       }
     });
-  }, []);
+  }, [readProfile]);
 
   // //  Logout function
   const handleLogout = () => {

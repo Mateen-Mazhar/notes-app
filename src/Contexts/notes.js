@@ -1,11 +1,4 @@
-import {
-  collection,
-  deleteDoc,
-  doc,
-  getDocs,
-  query,
-  where,
-} from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs, query } from "firebase/firestore";
 import React, {
   createContext,
   useCallback,
@@ -19,7 +12,6 @@ const NotesContext = createContext();
 const NotesProvider = ({ children }) => {
   const { user } = useAuthContext();
   const [notes, setNotes] = useState([]);
-  const [processing, setProcessing] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const showNotes = useCallback(async () => {
     if (user) {
@@ -31,7 +23,6 @@ const NotesProvider = ({ children }) => {
         NotesContent.push(document);
       }
       setNotes(NotesContent);
-      setProcessing(false);
     }
   }, [user]);
 

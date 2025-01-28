@@ -59,13 +59,25 @@ const Copyright = () => {
         <div className="footer-section">
           <h4 className="footer-subtitle">Connect</h4>
           <div className="social-links">
-            <a target="_blank" rel="noopener noreferrer">
+            <a
+              href={window.location.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <GithubOutlined />
             </a>
-            <a target="_blank" rel="noopener noreferrer">
+            <a
+              href={window.location.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <LinkedinOutlined />
             </a>
-            <a target="_blank" rel="noopener noreferrer">
+            <a
+              href={window.location.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <TwitterOutlined />
             </a>
           </div>

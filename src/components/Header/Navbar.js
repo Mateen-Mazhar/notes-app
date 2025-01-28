@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Button, Dropdown, Input, theme } from "antd";
+import { Avatar, Button, Dropdown } from "antd";
 import {
   BellOutlined,
   LogoutOutlined,
@@ -7,7 +7,6 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { useAuthContext } from "../../Contexts/auth";
-import { Header } from "antd/es/layout/layout";
 import { useNotesContext } from "../../Contexts/notes";
 
 const Navbar = () => {
