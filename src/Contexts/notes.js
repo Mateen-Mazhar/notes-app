@@ -15,7 +15,10 @@ const NotesProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const showNotes = useCallback(async () => {
     if (user) {
-      const q = query(collection(firestore, "Notes"));
+      const q = query(
+        collection(firestore, "Notes"),
+        where("uid", "==", user.uid)
+      );
       const querySnapshot = await getDocs(q);
       const NotesContent = [];
       for (const doc of querySnapshot.docs) {
