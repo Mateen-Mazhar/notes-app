@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Screenloader = () => {
   return (
-    <div className='screen-loader'><span class="loader"></span></div>
-  )
-}
+    <div className="screen-loader">
+      <span className="spinner text-primary"></span>
+    </div>
+  );
+};
 
-export default Screenloader
+export default Screenloader;

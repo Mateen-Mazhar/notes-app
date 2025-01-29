@@ -51,6 +51,7 @@ const Copyright = () => {
             <li>
               <Link to="/create">Create Note</Link>
             </li>
+            
             <li>
               <Link to="/">Profile</Link>
             </li>

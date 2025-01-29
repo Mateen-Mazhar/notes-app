@@ -17,7 +17,7 @@ const initialState = {
 
 const AuthProvider = ({ children }) => {
   let [state, setContextState] = useState(initialState);
-  let [isAppLoading, setisAppLoading] = useState(true);
+  let [isAppLoading, setIsAppLoading] = useState(true);
 
   const readProfile = useCallback(async (user) => {
     const docRef = doc(firestore, "users", user.uid);
@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
       // docSnap.data() will be undefined in this case
       console.log("No such document!");
     }
-    setisAppLoading(false);
+    setIsAppLoading(false);
   }, []);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
         readProfile(user);
       } else {
         console.log("user logged out");
-        setisAppLoading(false);
+        setIsAppLoading(false);
       }
     });
   }, [readProfile]);
@@ -60,7 +60,12 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ ...state, setContextState, handleLogout, isAppLoading }}
+      value={{
+        ...state,
+        setContextState,
+        handleLogout,
+        isAppLoading,
+      }}
     >
       {children}
     </AuthContext.Provider>

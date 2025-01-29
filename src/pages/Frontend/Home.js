@@ -268,7 +268,8 @@ const Home = () => {
     description: "",
     id: "",
   });
-  const { notes, setNotes, removeNote, searchQuery } = useNotesContext();
+  const { notes, setNotes, removeNote, searchQuery, isProcessing } =
+    useNotesContext();
   const { user, isAuth } = useAuthContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const {
@@ -449,6 +450,12 @@ const Home = () => {
                     </div>
                   </div>
                 ))
+              ) : isProcessing ? (
+                <>
+                  <div className="col text-center py-5">
+                    <Spin />
+                  </div>
+                </>
               ) : (
                 <div className="col text-center py-5">
                   <Empty

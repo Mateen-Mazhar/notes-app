@@ -17,6 +17,7 @@ import { firestore } from "../Config/firebase";
 import { useAuthContext } from "./auth";
 const NotesContext = createContext();
 const NotesProvider = ({ children }) => {
+  const [isProcessing, setIsProcessing] = useState(true);
   const { user } = useAuthContext();
   const [notes, setNotes] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -33,6 +34,7 @@ const NotesProvider = ({ children }) => {
         NotesContent.push(document);
       }
       setNotes(NotesContent);
+      setIsProcessing(false);
     }
   }, [user]);
 
@@ -53,7 +55,14 @@ const NotesProvider = ({ children }) => {
 
   return (
     <NotesContext.Provider
-      value={{ removeNote, notes, setNotes, searchQuery, setSearchQuery }}
+      value={{
+        removeNote,
+        notes,
+        setNotes,
+        searchQuery,
+        setSearchQuery,
+        isProcessing,
+      }}
     >
       {children}
     </NotesContext.Provider>
